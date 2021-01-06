@@ -93,6 +93,6 @@
 
 @stop
 
-@extends('includes/footer')
-@section('footer')
-@stop
+{{--@extends('includes/footer')--}}
+{{--@section('footer')--}}
+{{--@stop--}}
