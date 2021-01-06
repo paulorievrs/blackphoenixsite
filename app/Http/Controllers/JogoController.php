@@ -90,6 +90,7 @@ class JogoController extends Controller
         $today = (date('Y-m-d'));
         $jogos = DB::table('jogos')->select('*')->where('diaDoJogo', '>=', $today)->orderBy('diaDoJogo', 'desc')->paginate(3);
 
+
         return view('home')->with(['jogos' => $jogos]);
     }
 }
