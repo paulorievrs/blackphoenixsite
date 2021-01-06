@@ -19,7 +19,7 @@
 
                 <div class="d-flex text-muted pt-3">
                     <p class="pb-3 mb-0 small lh-sm border-bottom w-100">
-                        <strong class="d-block text-dark">Sem próximos jogos</strong>
+                        <strong class="d-block text-gray-dark">Sem próximos jogos</strong>
                     </p>
                     <div class="border-bottom w-100"></div>
                 </div>
