@@ -14,7 +14,12 @@
 
         @if($response->data === [])
             <hr class="featurette-divider">
-            <p>Por enquanto, não há streamers online</p>
+            <p>Não ninguém online :(</p>
+            <p>Aproveite e siga elas para saber por notificação!</p>
+            @foreach($twitch_names as $name)
+                <p><a target="_blank" href={{"https://twitch.tv/" . $name}}>{{  ucfirst($name) }}</a></p>
+            @endforeach
+
         @endif
 
         @foreach($response->data as $response)

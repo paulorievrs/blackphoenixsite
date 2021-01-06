@@ -10,7 +10,7 @@ class TwitchController extends Controller
     public function getData()
     {
         $twitch_names = ['joyume', 'dienicic', 'acypreste', 'juliaferrante'];
-        $twitch_responses = array();
+        shuffle($twitch_names);
         $user_login = "";
         foreach($twitch_names as $name)
         {
@@ -24,7 +24,8 @@ class TwitchController extends Controller
 
         $response = json_decode($response->body());
         return view('streamers')->with([
-            'response' => $response
+            'response' => $response,
+            'twitch_names' => $twitch_names
         ]);
     }
 }
