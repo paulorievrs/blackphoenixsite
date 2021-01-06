@@ -14,7 +14,7 @@ use App\Http\Controllers\JogoController;
 |
 */
 
-Route::get('/teste', [ JogoController::class, 'getRecents' ]);
+Route::get('/', [ JogoController::class, 'getRecents' ]);
 Route::get('/jogos', [ JogoController::class, 'index' ]);
 
 Route::get('/streamers', [ TwitchController::class, 'getData']);
