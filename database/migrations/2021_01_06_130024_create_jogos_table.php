@@ -23,6 +23,7 @@ class CreateJogosTable extends Migration
             $table->string('logoDoTime')->nullable();
             $table->integer('resultadoBlackPhoenix')->nullable();
             $table->integer('resultadoDoTime')->nullable();
+            $table->string('campeonato')->nullable();
 
         });
     }

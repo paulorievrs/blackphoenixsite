@@ -19,7 +19,7 @@
 
                 <div class="d-flex text-muted pt-3">
                     <p class="pb-3 mb-0 small lh-sm border-bottom w-100">
-                        <strong class="d-block text-gray-dark">Sem próximos jogos</strong>
+                        <strong class="d-block text-dark">Sem próximos jogos</strong>
                     </p>
                     <div class="border-bottom w-100"></div>
                 </div>
@@ -30,8 +30,11 @@
 {{--                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#6f42c1"/></svg>--}}
                     <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" src="{{ $jogo->logoDoTime === null ? "/img/logo.png" : $jogo->logoDoTime }}" alt="" width="32" height="32">
                 <p class="pb-3 mb-0 small lh-sm border-bottom w-100">
-                    <strong class="d-block text-gray-dark">Black Phoenix vs {{ $jogo->nomeDoTime }}</strong>
-                    Dia {{ date('d/m', strtotime($jogo->diaDoJogo)) }} às {{ date('H:m', strtotime($jogo->horaDoJogo)) }} - Assista em: <a target={{ $jogo->linkParaAssistir === null ? "" : "_blank" }} href="{{ $jogo->linkParaAssistir }}">{{ $jogo->linkParaAssistir === null ? "Não há transmissão definida ainda." : $jogo->linkParaAssistir}}</a>
+                    <strong class="d-block text-dark">Black Phoenix vs {{ $jogo->nomeDoTime }}</strong>
+                    <strong class="text-dark">Dia:</strong> {{ date('d/m', strtotime($jogo->diaDoJogo)) }} <strong class="text-dark"> - Hora:</strong> {{ date('H:m', strtotime($jogo->horaDoJogo)) }}
+                    <strong class="text-dark">- Assista em: </strong><a target={{ $jogo->linkParaAssistir === null ? "" : "_blank" }} href="{{ $jogo->linkParaAssistir }}">{{ $jogo->linkParaAssistir === null ? "Não há transmissão definida ainda." : $jogo->linkParaAssistir}}</a>
+                    <br><strong class="text-dark">Campeonato: </strong> {{ $jogo->campeonato }}
+
                 </p>
                 <div class="border-bottom w-100"></div>
             </div>
