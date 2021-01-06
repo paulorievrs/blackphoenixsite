@@ -4,8 +4,8 @@
 @extends('includes/menu')
 @section('menu')
 
-<div class="container">
-    <div class="container marketing pt-3">
+<div class="container pt-5">
+    <div class="container marketing pt-5">
 
         <div class="d-flex flex-row justify-content-between">
             <h1>Nossas streamers online </h1>
