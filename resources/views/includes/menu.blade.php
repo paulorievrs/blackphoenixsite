@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark mb-5">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Black Phoenix</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,10 +16,14 @@
                 <li class="nav-item">
                     <a class="nav-link {{(Route::current()->uri === 'jogos' ? "active" : "")}}" href="/jogos" tabindex="-1" aria-disabled="true">Nossos jogos</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{(Route::current()->uri === 'contato' ? "active" : "")}}" href="/contato" tabindex="-1" aria-disabled="true">Contato</a>
+                </li>
+
+
             </ul>
 
         </div>
     </div>
 </nav>
-</header>
 @yield('menu')
