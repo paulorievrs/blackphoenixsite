@@ -14,11 +14,14 @@
 
         @if($response->data === [])
             <hr class="featurette-divider">
-            <p>Não ninguém online :(</p>
-            <p>Aproveite e siga elas para saber por notificação!</p>
-            @foreach($twitch_names as $name)
-                <p><a target="_blank" href={{"https://twitch.tv/" . $name}}>{{  ucfirst($name) }}</a></p>
-            @endforeach
+
+            <div class="p-2 bg-white shadow rounded">
+                <p>Não ninguém online :(</p>
+                <p>Aproveite e siga elas para saber por notificação!</p>
+                @foreach($twitch_names as $name)
+                    <p><a target="_blank" href={{"https://twitch.tv/" . $name}}>{{  ucfirst($name) }}</a></p>
+                @endforeach
+            </div>
 
         @endif
 
@@ -26,9 +29,8 @@
 
             <div class="streamers" onclick='window.open("{{"https://twitch.tv/$response->user_name" }}", "_blank");'>
                 <hr class="featurette-divider">
-
-                <div class="row featurette">
-                    <div class="col-md-7">
+                <div class="row featurette p-2 bg-white shadow rounded">
+                    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
 
                         <h2 class="featurette-heading" style="color: #de4515">{{ ucfirst($response->user_name) }}</h2>
                         <p class="lead pt-2"><strong style="font-weight: bold;">Título: </strong> {{ $response->title }}</p>

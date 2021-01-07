@@ -23,6 +23,7 @@
 <style>
     body {
         font-family: 'Noto Sans JP', sans-serif;
+        background-image:url({{url('https://akvteam.com.br/assets/painel/images/tic-tac-toe.png')}});
 
     }
     .bd-placeholder-img {

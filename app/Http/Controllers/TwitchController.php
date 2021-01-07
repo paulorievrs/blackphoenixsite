@@ -10,7 +10,9 @@ class TwitchController extends Controller
     public function getData()
     {
         $twitch_names = ['joyume', 'dienicic', 'acypreste', 'juliaferrante'];
+//            $twitch_names = ['deercheerup', 'gaules', 'liminhag0d', 'pokemaobr'];
         shuffle($twitch_names);
+
         $user_login = "";
         foreach($twitch_names as $name)
         {
@@ -23,6 +25,7 @@ class TwitchController extends Controller
         ])->get('https://api.twitch.tv/helix/streams?' . $user_login);
 
         $response = json_decode($response->body());
+        shuffle($response->data);
         return view('streamers')->with([
             'response' => $response,
             'twitch_names' => $twitch_names
