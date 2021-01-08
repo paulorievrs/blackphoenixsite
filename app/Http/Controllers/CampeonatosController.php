@@ -47,8 +47,6 @@ class CampeonatosController extends Controller
         } catch (\Exception $e) {
             $response = "Erro ao criar campeonato!";
             redirect('/create-campeonato')->with(['response' => $response]);
-
-
         }
 
 

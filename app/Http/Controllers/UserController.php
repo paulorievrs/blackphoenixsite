@@ -81,7 +81,10 @@ class UserController extends Controller
      */
     public function edit()
     {
-        return view('lime.edit-profile');
+        $user = Auth::user();
+        $links = DB::table('links')->select('*')->where('user_id', '=', $user->id)->get();
+
+        return view('lime.edit-profile', [ 'links' => $links ]);
     }
 
     /**

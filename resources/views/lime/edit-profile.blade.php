@@ -101,8 +101,65 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Meus links</h5>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Link</th>
+                                            <th scope="col">Excluir</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($links as $link)
+                                            <tr>
+                                                <td>{{ $link->name }}</td>
+                                                <td><a target="_blank" href="{{ $link->link }}">{{ $link->link }}</a></td>
+                                                <td scope="col" style="cursor: pointer">
+                                                    <form action="/delete-link/{{ $link->id }}" method="POST">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button style="background: none;"><i class="material-icons" style="color: red;">delete</i></button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                    <div class="col-xl">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <form action="/link" method="POST">
+                                                    {{ csrf_field() }}
+                                                    <div class="form-row d-flex flex-row">
+                                                        <div class="col-md-6 form-group pb-2">
+                                                            <input type="text" class="form-control" name="name" placeholder="Nome do Link"/>
+                                                        </div>
+                                                        <div class="col-md-6 form-group pb-2">
+                                                            <input type="text" class="form-control" name="link" placeholder="Link"/>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <button type="submit" class="btn btn-primary">Adicionar</button>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
+
     <div class="lime-footer">
         <div class="container">
             <div class="row">

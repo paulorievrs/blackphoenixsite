@@ -7,7 +7,8 @@ use App\Http\Controllers\JogoController;
 use App\Http\Controllers\TimeController;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\CampeonatosController;
-use \App\Http\Controllers\UserController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LinkController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,6 +57,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::put('/campeonato/{id}', [ CampeonatosController::class, 'update']);
     Route::get('/edit-campeonato/{id}', [ CampeonatosController::class, 'edit']);
     Route::delete('/delete-campeonato/{id}', [ CampeonatosController::class, 'destroy']);
+
+    Route::post('/link', [ LinkController::class, 'store' ]);
+    Route::delete('/delete-link/{id}', [ LinkController::class, 'destroy' ]);
 
     Route::get('/admin-jogos', [ JogoController::class, 'index']);
     Route::get('/create-jogo', [ JogoController::class, 'create']);

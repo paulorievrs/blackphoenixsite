@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Link;
+use Illuminate\Support\Facades\Auth;
 
 class LinkController extends Controller
 {
@@ -31,22 +32,31 @@ class LinkController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
         try {
+
+            $request->validate([
+                'name' => 'required',
+                'link' => 'required',
+            ]);
+
             $link = new Link();
             $link->name = $request->name;
             $link->link = $request->link;
-            $link->user_id = $request->user_id;
+            $link->user_id = Auth::user()->id;
             $link->save();
             $response = "Link criado com sucesso!";
 
         } catch (\Exception $e) {
             $response = "Erro ao criar link!";
-
         }
+
+        return redirect('/edit-profile')->with(['response' => $response]);
+
+
 
     }
 
@@ -103,7 +113,7 @@ class LinkController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function destroy($id)
     {
@@ -116,6 +126,8 @@ class LinkController extends Controller
             $response = "Erro ao alterar link!";
 
         }
+        return redirect('/edit-profile')->with(['response' => $response]);
+
 
     }
 }
