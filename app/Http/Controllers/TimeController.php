@@ -94,7 +94,7 @@ class TimeController extends Controller
             return redirect('/admin-times')->with(['response' => $response]);
         } catch (\Exception $e) {
             $response = "Erro ao alterar time.";
-            return redirect('/edit-times')->with(['response' => $response]);
+            return redirect('/admin-times')->with(['response' => $response]);
         }
     }
 

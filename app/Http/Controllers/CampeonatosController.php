@@ -93,7 +93,7 @@ class CampeonatosController extends Controller
             return redirect('/admin-campeonatos')->with(['response' => $response]);
         } catch (\Exception $e) {
             $response = "Erro ao alterar: " . $campeonato->name;
-            return redirect('/edit-campeonatos')->with(['response' => $response]);
+            return redirect('/admin-campeonatos')->with(['response' => $response]);
         }
 
     }
