@@ -19,7 +19,9 @@
                 <li class="nav-item">
                     <a class="nav-link {{(Route::current()->uri === 'contato' ? "active" : "")}}" href="/contato" tabindex="-1" aria-disabled="true">Contato</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard" tabindex="-1" aria-disabled="true">Admin</a>
+                </li>
 
             </ul>
 

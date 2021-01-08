@@ -20,6 +20,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'bio',
+        'twitch_username',
+        'local',
+        'profileimagelink',
+        'bannerimagelink'
     ];
 
     /**
@@ -40,4 +45,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function links()
+    {
+        return $this->hasMany(Link::class, 'user_id');
+    }
 }

@@ -16,15 +16,17 @@ class CreateJogosTable extends Migration
         Schema::create('jogos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nomeDoTime');
             $table->date('diaDoJogo');
             $table->time('horaDoJogo');
             $table->string('linkParaAssistir')->nullable();
-            $table->string('logoDoTime')->nullable();
             $table->integer('resultadoBlackPhoenix')->nullable();
             $table->integer('resultadoDoTime')->nullable();
-            $table->string('campeonato')->nullable();
 
+            $table->unsignedBigInteger('campeonato_id');
+            $table->foreign('campeonato_id')->references('id')->on('campeonatos');
+
+            $table->unsignedBigInteger('time_id');
+            $table->foreign('time_id')->references('id')->on('times');
         });
     }
 

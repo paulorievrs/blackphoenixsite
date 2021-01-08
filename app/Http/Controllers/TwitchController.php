@@ -25,7 +25,9 @@ class TwitchController extends Controller
         ])->get('https://api.twitch.tv/helix/streams?' . $user_login);
 
         $response = json_decode($response->body());
+
         shuffle($response->data);
+
         return view('streamers')->with([
             'response' => $response,
             'twitch_names' => $twitch_names

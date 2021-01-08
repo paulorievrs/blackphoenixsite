@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Campeonatos;
 use App\Models\Jogo;
+use App\Models\Time;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +19,7 @@ class JogoController extends Controller
     {
         $jogos = DB::table('jogos')->select('*')->orderBy('diaDoJogo', 'desc')->paginate(8);
 
-        return view('jogos')->with(['jogos' => $jogos]);
+        return view('lime.jogos')->with(['jogos' => $jogos]);
     }
 
     /**
@@ -27,7 +29,12 @@ class JogoController extends Controller
      */
     public function create()
     {
-        return view('admin.createjogo');
+        $times = Time::all();
+        $campeonatos = Campeonatos::all();
+        return view('lime.create.jogo', [
+            'times' => $times,
+            'campeonatos' => $campeonatos
+        ]);
     }
 
     /**
@@ -40,36 +47,38 @@ class JogoController extends Controller
     {
         try {
             $this->validate(request(), [
-                'nomeDoTime' => 'required',
+                'time_id' => 'required',
                 'diaDoJogo' => 'required',
-                'horaDoJogo' => 'required'
+                'horaDoJogo' => 'required',
+                'campeonato_id' => 'required'
             ]);
         } catch (\Exception $e) {
             $response = "Erro ao criar jogo! Preencha Nome, dia e hora";
 
-            return redirect('/admin/createjogos')->with(['response' => $response]);
+            return redirect('/create-jogo')->with(['error' => $response]);
         }
 
         try {
             $jogo = new Jogo();
-            $jogo->nomeDoTime = $request->nomeDoTime;
             $jogo->diaDoJogo = $request->diaDoJogo;
             $jogo->horaDoJogo = $request->horaDoJogo;
             $jogo->linkParaAssistir = $request->linkParaAssistir;
-            $jogo->logoDoTime = $request->logoDoTime;
             $jogo->resultadoBlackPhoenix = $request->resultadoBlackPhoenix;
             $jogo->resultadoDoTime = $request->resultadoDoTime;
-            $jogo->campeonato = $request->campeonato;
+            $jogo->campeonato_id = $request->campeonato_id;
+            $jogo->time_id = $request->time_id;
             $jogo->save();
 
             $response = "Criado jogo com sucesso!";
 
-            return redirect('/admin/jogos')->with(['response' => $response]);
+            return redirect('/admin-jogos')->with(['response' => $response]);
+
 
         } catch (\Exception $e) {
             $response = "Erro ao criar jogo!";
 
-            return redirect('/admin/jogos')->with(['response' => $response]);
+            return redirect('/admin-jogos')->with(['response' => $response]);
+
 
         }
     }
@@ -94,7 +103,17 @@ class JogoController extends Controller
     public function edit($id)
     {
         $jogo = Jogo::find($id);
-        return view('admin.editjogo')->with(['jogo' => $jogo]);
+        $times = Time::all()->where('id', '!=', $jogo->time_id);
+        $time = Time::find($jogo->time_id);
+        $campeonatos =  Campeonatos::all()->where('id', '!=', $jogo->campeonato_id);
+        $campeonato = Campeonatos::find($jogo->campeonato_id);
+        return view('lime.edit.jogo')->with([
+            'jogo' => $jogo,
+            'times' => $times,
+            'campeonatos' => $campeonatos,
+            'time' => $time,
+            'campeonato' => $campeonato
+        ]);
     }
 
     /**
@@ -106,30 +125,32 @@ class JogoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate(request(), [
-            'nomeDoTime' => 'required',
-            'diaDoJogo' => 'required',
-            'horaDoJogo' => 'required'
-        ]);
+
 
         try {
+            $this->validate(request(), [
+                'time_id' => 'required',
+                'diaDoJogo' => 'required',
+                'horaDoJogo' => 'required',
+                'campeonato_id' => 'required'
+            ]);
+
             $jogo = Jogo::find($id);
-            $jogo->nomeDoTime = $request->nomeDoTime;
+            $jogo->time_id = $request->time_id;
             $jogo->diaDoJogo = $request->diaDoJogo;
             $jogo->horaDoJogo = $request->horaDoJogo;
             $jogo->linkParaAssistir = $request->linkParaAssistir;
-            $jogo->logoDoTime = $request->logoDoTime;
             $jogo->resultadoBlackPhoenix = $request->resultadoBlackPhoenix;
             $jogo->resultadoDoTime = $request->resultadoDoTime;
-            $jogo->campeonato = $request->campeonato;
+            $jogo->campeonato_id = $request->campeonato_id;
             $jogo->save();
 
             $response = "Editado com sucesso";
-            return redirect('/admin/jogos')->with(['response' => $response]);
+            return redirect('/admin-jogos')->with(['response' => $response]);
 
         } catch (\Exception $e) {
             $response = "Erro ao editar";
-            return redirect('/admin/jogos')->with(['response' => $response]);
+            return redirect()->back()->with(['response' => $response]);
 
         }
     }
@@ -148,12 +169,12 @@ class JogoController extends Controller
 
             $response = "Deletado com sucesso.";
 
-            return redirect('admin/jogos')->with(['response' => $response]);
+            return redirect('admin-jogos')->with(['response' => $response]);
 
         } catch (\Exception $e) {
             $response = "Erro ao deletar.";
 
-            return redirect('admin/jogos')->with(['response' => $response]);
+            return redirect('admin-jogos')->with(['response' => $response]);
         }
     }
 
@@ -170,5 +191,24 @@ class JogoController extends Controller
     {
         $jogos = DB::table('jogos')->select('*')->orderBy('diaDoJogo', 'desc')->paginate(8);
         return view('admin.jogos')->with(['jogos' => $jogos]);
+    }
+
+    public function limeindex()
+    {
+        $today = (date('Y-m-d'));
+        $nextDays = DB::table('jogos')->select('*')->where('diaDoJogo', '>=', $today)->orderBy('diaDoJogo', 'desc')->paginate(5);
+
+        $recents = DB::table('jogos')->select('*')->where('diaDoJogo', '<=', $today)->orderBy('diaDoJogo', 'desc')->paginate(5);
+
+        return view('lime.limeindex')->with([
+            'nextDays' => $nextDays,
+            'recents' => $recents
+        ]);
+    }
+    public function index_jogos()
+    {
+        $jogos = DB::table('jogos')->select('*')->orderBy('diaDoJogo', 'desc')->paginate(8);
+
+        return view('jogos')->with(['jogos' => $jogos]);
     }
 }
