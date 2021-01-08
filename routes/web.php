@@ -34,6 +34,9 @@ Route::get('/contato', function () {
     return view('contato');
 });
 
+Route::get('/profile/{twitch_username}', [ UserController::class, 'profile' ]);
+
+
 //Route::get('/enviar-email', function () {
 //    Mail::send(new \App\Mail\newContato());
 //});
@@ -74,9 +77,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::put('/time/{id}', [ TimeController::class, 'update']);
     Route::get('/edit-time/{id}', [ TimeController::class, 'edit']);
     Route::delete('/delete-time/{id}', [ TimeController::class, 'destroy']);
-
 });
-Route::get('/profile/{twitch_username}', [ UserController::class, 'profile' ]);
+
 
 Auth::routes();
 
