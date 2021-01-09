@@ -27,8 +27,7 @@ class TwitchController extends Controller
         $response = json_decode($response->body());
 
         shuffle($response->data);
-
-        return view('streamers')->with([
+        return view('front.videos')->with([
             'response' => $response,
             'twitch_names' => $twitch_names
         ]);

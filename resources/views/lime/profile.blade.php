@@ -35,7 +35,7 @@
                     <div class="profile-cover"></div>
                     <div class="profile-header">
                         <div class="profile-img">
-                            <img src={{ Auth::user()->profileimagelink === null || strlen(Auth::user()->profileimagelink) === 0 ? 'https://filestore.community.support.microsoft.com/api/images/6061bd47-2818-4f2b-b04a-5a9ddb6f6467?upload=true'  : '/storage/user_img/' . Auth::user()->profileimagelink }}>
+                            <img src="{{ Auth::user()->profileimagelink === null || strlen(Auth::user()->profileimagelink) === 0 ? 'https://filestore.community.support.microsoft.com/api/images/6061bd47-2818-4f2b-b04a-5a9ddb6f6467?upload=true'  : '/storage/user_img/' . Auth::user()->profileimagelink }}" />
                         </div>
                         <div class="profile-name">
                             <h3>{{ Auth::user()->name }}

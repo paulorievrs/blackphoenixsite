@@ -90,7 +90,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Relação vitórias/derrotas 2021</h5>
-                            <div id="apex3"></div>
+                            <div id="apex3" style="color: white"></div>
                         </div>
                     </div>
                 </div>

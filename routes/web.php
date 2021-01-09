@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\CampeonatosController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\NewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,15 +26,32 @@ use App\Http\Controllers\LinkController;
 
 
  /////////////////////////////
-Route::get('/', [ JogoController::class, 'getRecents' ]);
+//Route::get('/', [ JogoController::class, 'getRecents' ]);
+//
+//Route::get('/jogos', [ JogoController::class, 'index_jogos' ]);
+//
+//Route::get('/streamers', [ TwitchController::class, 'getData']);
 
-Route::get('/jogos', [ JogoController::class, 'index_jogos' ]);
+Route::get('/', [ IndexController::class, 'homepage' ]);
 
-Route::get('/streamers', [ TwitchController::class, 'getData']);
+Route::get('/streams', [ TwitchController::class, 'getData']);
 
-Route::get('/contato', function () {
-    return view('contato');
+Route::get('/jogos', [ JogoController::class, 'listJogos']);
+
+Route::get('/news', [ NewsController::class, 'index']);
+
+Route::get('news/{id}', [ NewsController::class, 'show'] );
+
+Route::get('/contato', function() {
+   return view('front.contato');
 });
+Route::post('/contato-send', [ \App\Http\Controllers\ContatoController::class, 'store']);
+
+
+
+//Route::get('/contato', function () {
+//    return view('contato');
+//});
 
 Route::get('/profile/{twitch_username}', [ UserController::class, 'profile' ]);
 
@@ -77,6 +96,13 @@ Route::group(['middleware' => ['auth']], function() {
     Route::put('/time/{id}', [ TimeController::class, 'update']);
     Route::get('/edit-time/{id}', [ TimeController::class, 'edit']);
     Route::delete('/delete-time/{id}', [ TimeController::class, 'destroy']);
+
+    Route::get('/create-news', [ NewsController::class, 'create']);
+    Route::get('/edit-news/{id}', [ NewsController::class, 'edit']);
+    Route::put('/news/{id}', [ NewsController::class, 'update']);
+    Route::post('/news', [ NewsController::class, 'store']);
+    Route::get('admin-news', [ NewsController::class, 'listNews' ]);
+
 });
 
 

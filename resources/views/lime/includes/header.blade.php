@@ -37,85 +37,91 @@
         <span class='sr-only'>Loading...</span>
     </div>
 </div>
-@if(Route::current()->uri !== 'login')
 <div class="lime-sidebar">
     <div class="lime-sidebar-inner slimscroll">
         <ul class="accordion-menu">
-            <li class="sidebar-title">
-                Menu
-            </li>
-            <li>
-                <a href="/dashboard" class="{{(Route::current()->uri === 'limeindex' ? 'active' : '')}}"><i class="material-icons">dashboard</i>Dashboard</a>
-            </li>
-            <li>
-                <a href="/profile" class="{{(Route::current()->uri === 'limeprofile' ? 'active' : '')}}"><i class="material-icons">person_outline</i>Profile</a>
-            </li>
-            <li class="sidebar-title">
-                Opções
-            </li>
-            <li>
-                <a href="#"><i class="material-icons">videogame_asset</i>Jogos<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="/create-jogo">Novo Jogo</a>
-                    </li>
+            @if(Auth::check())
 
-                    <li>
-                        <a href="/admin-jogos">Todos os jogos</a>
-                    </li>
-                </ul>
-            </li>
+                <li class="sidebar-title">
+                    Menu
+                </li>
+                <li>
+                    <a href="/dashboard" class="{{(Route::current()->uri === 'limeindex' ? 'active' : '')}}"><i class="material-icons">dashboard</i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="/profile" class="{{(Route::current()->uri === 'limeprofile' ? 'active' : '')}}"><i class="material-icons">person_outline</i>Profile</a>
+                </li>
+                <li class="sidebar-title">
+                    Opções
+                </li>
+                <li>
+                    <a href="#"><i class="material-icons">videogame_asset</i>Jogos<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/create-jogo">Novo Jogo</a>
+                        </li>
 
-            <li>
-                <a href="#"><i class="material-icons">emoji_events</i>Campeonatos<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
-                <ul class="sub-menu">
+                        <li>
+                            <a href="/admin-jogos">Todos os jogos</a>
+                        </li>
+                    </ul>
+                </li>
 
-                    <li>
-                        <a href="/create-campeonato">Novo Campeonato</a>
-                    </li>
+                <li>
+                    <a href="#"><i class="material-icons">emoji_events</i>Campeonatos<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
+                    <ul class="sub-menu">
 
-                    <li>
-                        <a href="/admin-campeonatos">Todos os campeonatos</a>
-                    </li>
+                        <li>
+                            <a href="/create-campeonato">Novo Campeonato</a>
+                        </li>
 
-                </ul>
-            </li>
+                        <li>
+                            <a href="/admin-campeonatos">Todos os campeonatos</a>
+                        </li>
 
-            <li>
-                <a href="#"><i class="material-icons">group_add</i>Times<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
-                <ul class="sub-menu">
+                    </ul>
+                </li>
 
-                    <li>
-                        <a href="/create-time">Novo Time</a>
-                    </li>
+                <li>
+                    <a href="#"><i class="material-icons">group_add</i>Times<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
+                    <ul class="sub-menu">
 
-                    <li>
-                        <a href="/admin-times">Todos os Times</a>
-                    </li>
+                        <li>
+                            <a href="/create-time">Novo Time</a>
+                        </li>
 
-                </ul>
-            </li>
+                        <li>
+                            <a href="/admin-times">Todos os Times</a>
+                        </li>
 
-            <li>
-                <a href=""><i class="material-icons">account_box</i>Meu menu<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="edit-profile">Alterar perfil</a>
-                    </li>
+                    </ul>
+                </li>
 
-                    <li>
-                        <a href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
+                <li>
+                    <a href=""><i class="material-icons">account_box</i>Meu menu<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="edit-profile">Alterar perfil</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
+                                {{ __('Logout') }}
+                            </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </li>
-                </ul>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            @endif
+            <li>
+                <a href="/"><i class="material-icons">home</i>Página inicial</a>
             </li>
+
         </ul>
     </div>
 </div>
@@ -130,5 +136,4 @@
         <a class="navbar-brand" href="#"> {{(Route::current()->uri === 'dashboard' ? 'Bem vindo(a) de volta, ' . Auth::user()->name : '')}} </a>
     </nav>
 </div>
-@endif
 @yield('limeheader')

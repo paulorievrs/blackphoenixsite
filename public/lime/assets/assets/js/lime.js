@@ -1,12 +1,12 @@
 
 $(document).ready(function() {
-    
+
     "use strict";
     var submenu_animation_speed = 200,
         submenu_opacity_animation = true;
-    
-    
-    
+
+
+
     var simulateClick = function (elem) {
         // Create our event (with options)
         var evt = new MouseEvent('click', {
@@ -17,7 +17,7 @@ $(document).ready(function() {
         // If cancelled, don't dispatch our event
 	   var canceled = !elem.dispatchEvent(evt);
     };
-    
+
     var delay = (function(){
         var timer = 0;
         return function(callback, ms){
@@ -25,13 +25,13 @@ $(document).ready(function() {
             timer = setTimeout(callback, ms);
         };
     })();
-    
-    var limeSidebar = function() { 
-        
+
+    var limeSidebar = function() {
+
         if ($('.material-design-hamburger__icon').length === 1) {
             document.querySelector('.material-design-hamburger__icon').addEventListener(
                 'click',
-                function() {      
+                function() {
                     var child;
                     document.body.classList.toggle('background--blur');
                     this.parentNode.nextElementSibling.classList.toggle('menu--on');
@@ -48,37 +48,37 @@ $(document).ready(function() {
                 }
             );
         }
-        
+
         $(window).click(function() {
             if($('body').hasClass('sidebar-show')) {
                 var navToggle = document.querySelector('.navigation-toggle a');
                 simulateClick(navToggle);
             }
         });
-        
+
         $('.lime-sidebar').click(function(event){
             event.stopPropagation();
         });
-        
+
         $('.navigation-toggle a').on('click', function(){
             $('body').toggleClass('sidebar-show');
             return false;
         });
-        
-        
+
+
         var select_sub_menus = $('.accordion-menu li:not(.open) .sub-menu'),
             active_page_sub_menu_link = $('.accordion-menu li.active-page > a');
-        
+
         // Hide all sub-menus
         select_sub_menus.hide();
-        
-        
+
+
         if(submenu_opacity_animation == false) {
             $('.sub-menu li').each(function(i){
                 $(this).addClass('animation');
             });
         };
-        
+
         // Accordion
         $('.accordion-menu li a').on('click', function() {
             var sub_menu = $(this).next('.sub-menu'),
@@ -108,9 +108,9 @@ $(document).ready(function() {
                     $('.accordion-menu > li.open > .sub-menu').slideUp(submenu_animation_speed);
                     active_list_element.removeClass('open');
                 };
-            
+
             if(sub_menu.length) {
-                
+
                 if(!parent_list_el.hasClass('open')) {
                     if(active_list_element.length) {
                         hide_active_menu();
@@ -119,19 +119,19 @@ $(document).ready(function() {
                 } else {
                     hide_sub_menu();
                 };
-                
+
                 return false;
-                
+
             };
         });
-        
+
         if($('.active-page > .sub-menu').length) {
             active_page_sub_menu_link.click();
         };
-        
+
     };
-    
-    var limeHeader = function(){ 
+
+    var limeHeader = function(){
         if($('body').hasClass('header-fixed')) {
             $(window).scroll(function(){
                 var st = $(this).scrollTop(),
@@ -142,7 +142,7 @@ $(document).ready(function() {
                     $('.lime-header').removeClass('scroll-header');
                 }
             });
-    
+
             $(window).on('load', function(){
                 var st = $(this).scrollTop(),
                     stf = 0;
@@ -152,20 +152,20 @@ $(document).ready(function() {
                     $('.lime-header').removeClass('scroll-header');
                 }
             });
-        
+
         };
     };
-    
-    
+
+
     var theme_settings = function() {
-        
+
         $(window).click(function() {
             if($('body').hasClass('show-theme-settings')) {
                 var navToggle = document.querySelector('.theme-settings-link');
                 simulateClick(navToggle);
             }
         });
-        
+
         $('.theme-settings-sidebar').click(function(event){
             event.stopPropagation();
         });
@@ -174,7 +174,7 @@ $(document).ready(function() {
             return false;
         });
     }
-    
+
     var search_f = function() {
         $('#search input').on('input', function() {
             var value = $(this).val();
@@ -193,7 +193,7 @@ $(document).ready(function() {
                 }
             }, 500 );
         });
-        
+
         $(document).keyup(function(e) {
             if($('body').hasClass('searching')) {
                 if (e.keyCode === 27) {
@@ -201,7 +201,7 @@ $(document).ready(function() {
                 } // Close on escape
             }
         });
-        
+
         $(document).mouseup(function (e){
             var container = $(".search-results");
             var container2 = $("#search input");
@@ -212,22 +212,22 @@ $(document).ready(function() {
                 $('body').removeClass('searching');
             }
         });
-        
+
         $('#closeSearch').on('click', function(){
             $('body').removeClass('searching');
         });
- 
+
     }
-    
+
     var plugins_init = function(){
         // Slimscroll
         $('.slimscroll').slimScroll({
             wheelStep: 5
         });
-        
+
         $('[data-toggle="popover"]').popover();
         $('[data-toggle="tooltip"]').tooltip();
-        
+
         var imageCrop = function(){
             if($(".image-crop").length) {
                 var $image = $(".image-crop > img");
@@ -262,9 +262,9 @@ $(document).ready(function() {
                 });
             }
         }
-        
+
         imageCrop();
-        
+
         window.addEventListener('load', function() {
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.getElementsByClassName('needs-validation');
@@ -279,9 +279,9 @@ $(document).ready(function() {
                 }, false);
             });
         }, false);
-    
+
     };
-    
+
     limeSidebar();
     limeHeader();
     theme_settings();

@@ -14,7 +14,6 @@
 
         @if($response->data === [])
             <hr class="featurette-divider">
-
             <div class="p-2 bg-white shadow rounded">
                 <p>Não ninguém online :(</p>
                 <p>Aproveite e siga elas para saber por notificação!</p>
@@ -22,7 +21,6 @@
                     <p><a target="_blank" href={{"/profile/" . $name}}>{{  ucfirst($name) }}</a></p>
                 @endforeach
             </div>
-
         @endif
 
         @foreach($response->data as $response)

@@ -17,6 +17,7 @@ class JogoController extends Controller
      */
     public function index()
     {
+
         $jogos = DB::table('jogos')->select('*')->orderBy('diaDoJogo', 'desc')->paginate(8);
 
         return view('lime.jogos')->with(['jogos' => $jogos]);
@@ -196,6 +197,9 @@ class JogoController extends Controller
     public function limeindex()
     {
         $today = (date('Y-m-d'));
+
+
+
         $nextDays = DB::table('jogos')->select('*')->where('diaDoJogo', '>=', $today)->orderBy('diaDoJogo', 'desc')->paginate(5);
 
         $recents = DB::table('jogos')->select('*')->where('diaDoJogo', '<=', $today)->orderBy('diaDoJogo', 'desc')->paginate(5);
@@ -210,5 +214,21 @@ class JogoController extends Controller
         $jogos = DB::table('jogos')->select('*')->orderBy('diaDoJogo', 'desc')->paginate(8);
 
         return view('jogos')->with(['jogos' => $jogos]);
+    }
+
+    public function listJogos()
+    {
+
+        $today = (date('Y-m-d'));
+
+
+        $jogo = DB::table('jogos')->select('*')->where('diaDoJogo', '>=', $today)->orderBy('diaDoJogo', 'asc')->first();
+
+        $jogos = DB::table('jogos')->select('*')->paginate(5);
+
+        return view('front.jogos')->with([
+            'jogo' => $jogo,
+            'jogos' => $jogos
+        ]);
     }
 }
