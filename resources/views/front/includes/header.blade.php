@@ -90,6 +90,11 @@
                     </a>
                 </li>
 
+                <li><a class="ajaxifyPage" href="/dashboard">
+                        <i class="icon icon-dashboard s-24"></i> <span>Administração</span>
+                    </a>
+                </li>
+
 {{--                <li><a class="ajaxifyPage" href="/contato">--}}
 {{--                        <i class="icon icon-user s-24"></i> <span>Contato</span>--}}
 

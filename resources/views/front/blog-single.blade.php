@@ -89,6 +89,10 @@
                         <i class="icon icon-newspaper s-24"></i> <span>Noticías</span>
                     </a>
                 </li>
+                <li><a class="ajaxifyPage" href="/dashboard">
+                        <i class="icon icon-dashboard s-24"></i> <span>Administração</span>
+                    </a>
+                </li>
             </ul>
 
         </div>

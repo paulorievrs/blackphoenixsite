@@ -96,6 +96,20 @@
 
                 </ul>
             </li>
+                <li>
+                    <a href="#"><i class="material-icons">new_releases</i>Noticías<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
+                    <ul class="sub-menu">
+
+                        <li>
+                            <a href="/create-news">Nova noticía</a>
+                        </li>
+
+                        <li>
+                            <a href="/admin-news">Todos as noticías</a>
+                        </li>
+
+                    </ul>
+                </li>
 
                 <li>
                     <a href=""><i class="material-icons">account_box</i>Meu menu<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
