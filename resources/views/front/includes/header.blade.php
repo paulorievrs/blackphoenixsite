@@ -68,29 +68,30 @@
 <!-- @Pre loader-->
 <div id="app">
 
-    <aside class="main-sidebar fixed offcanvas shadow" data-toggle='offcanvas'>
+
+<aside class="main-sidebar fixed offcanvas shadow" data-toggle='offcanvas'>
         <div class="sidebar">
             <ul class="sidebar-menu">
-                <li><a class="ajaxifyPage" href="/">
+                <li><a class="{{(Route::current()->uri === '/' ? 'active' : '')}}" href="/">
                         <i class="icon icon-home-1 s-24"></i> <span>Home</span>
 
                     </a>
                 </li>
-                <li><a class="ajaxifyPage" href="/streams">
+                <li><a class="{{(Route::current()->uri === 'streams' ? 'active' : '')}}" href="/streams">
                         <i class="icon icon-video-player-2 s-24"></i> <span>Streams</span>
                     </a>
                 </li>
-                <li><a class="ajaxifyPage" href="/jogos">
+                <li><a class="{{(Route::current()->uri === 'jogos' ? 'active' : '')}}" href="/jogos">
                         <i class="icon icon-calendar-6 s-24"></i> <span>Jogos</span>
                     </a>
                 </li>
 
-                <li><a class="ajaxifyPage" href="/news">
+                <li><a class="{{(Route::current()->uri === 'news' ? 'active' : '')}}" href="/news">
                         <i class="icon icon-newspaper s-24"></i> <span>Noticías</span>
                     </a>
                 </li>
 
-                <li><a class="ajaxifyPage" href="/dashboard">
+                <li><a class="" href="/dashboard">
                         <i class="icon icon-dashboard s-24"></i> <span>Administração</span>
                     </a>
                 </li>
@@ -147,6 +148,5 @@
         </div>
 
     </nav>
-
 
 @yield('header')

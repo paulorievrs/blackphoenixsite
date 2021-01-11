@@ -2,6 +2,10 @@
 @section('limeheader')
 @endsection
 <div class="container pt-5">
+
+    <div class="d-flex align-items-center justify-content-center p-5">
+        <img src="/img/newlogo.png" style="width: 200px; cursor: pointer;" onclick="window.open('/', '_self')"/>
+    </div>
     <div class="login-container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 lfh">
@@ -18,8 +22,11 @@
                                 <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Entrar</button>
-                            <a href="/" >Voltar</a>
+                            <div class="d-flex flex-row justify-content-between">
+                                <button type="submit" class="btn btn-primary">Entrar</button>
+                                <a href="/" class="btn btn-outline-dark" >Voltar</a>
+                            </div>
+
                         </form>
                     </div>
                 </div>

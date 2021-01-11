@@ -37,10 +37,10 @@
         <span class='sr-only'>Loading...</span>
     </div>
 </div>
+@if(Auth::check())
 <div class="lime-sidebar">
     <div class="lime-sidebar-inner slimscroll">
         <ul class="accordion-menu">
-            @if(Auth::check())
 
                 <li class="sidebar-title">
                     Menu
@@ -132,7 +132,6 @@
                         </li>
                     </ul>
                 </li>
-            @endif
             <li>
                 <a href="/"><i class="material-icons">home</i>Página inicial</a>
             </li>
@@ -140,6 +139,7 @@
         </ul>
     </div>
 </div>
+
 
 <div class="lime-header">
     <nav class="navbar navbar-expand-lg">
@@ -151,4 +151,6 @@
         <a class="navbar-brand" href="#"> {{(Route::current()->uri === 'dashboard' ? 'Bem vindo(a) de volta, ' . Auth::user()->name : '')}} </a>
     </nav>
 </div>
+@endif
+
 @yield('limeheader')

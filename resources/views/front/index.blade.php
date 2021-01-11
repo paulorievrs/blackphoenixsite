@@ -10,7 +10,7 @@
                 <div class="text-white">
                     <div>
                         <div class="xv-slide" data-bg-possition="top"
-                             style="background-image:url('img/banner-menor.png'); top: 0;">
+                             style="background-image:url('img/banner-menor.png');">
 
                             <div class="bottom-gradient"></div>
                         </div>
@@ -39,9 +39,9 @@
                         @foreach($users as $user)
 
                         <div>
-                            <figure onclick="window.open('/profile/{{ $user->twitch_username }}', '_blank')">
+                            <figure onclick="window.open('/profile/{{ $user->twitch_username }}', '_new')">
                                 <div class="img-wrapper">
-                                    <img width="280" height="240" src="{{ $user->profileimagelink === null || strlen($user->profileimagelink) === 0 ? 'assets/img/demo/a8.jpg' : '/storage/user_img/' . $user->profileimagelink }}" alt="/">
+                                    <img width="280" src="{{ $user->profileimagelink === null || strlen($user->profileimagelink) === 0 ? 'assets/img/demo/a8.jpg' : '/storage/user_img/' . $user->profileimagelink }}" alt="/">
                                     <div class="img-overlay text-white">
                                         <div class="figcaption">
                                             <ul class="list-inline d-flex align-items-center justify-content-between">

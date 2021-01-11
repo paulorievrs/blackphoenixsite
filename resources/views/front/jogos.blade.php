@@ -4,7 +4,7 @@
 
 
 <main id="pageContent" class="page has-sidebar">
-    <div class="container-fluid relative animatedParent animateOnce no-p">
+    <div class="container-fluid relative animatedParent animateOnce">
         <!--Banner-->
         @if($jogo !== null)
 
@@ -51,9 +51,8 @@
                 </div>
             <div class="bottom-gradient"></div>
         </section>
-            <div style="padding-top: 100px"></div>
         @endif
-        @if($jogo === null) <div style="padding-top: 100px"></div> @endif
+        <div style="padding-top: 100px"></div>
         @foreach($jogos as $jogo)
             @php
                 $time = \App\Models\Time::find($jogo->time_id);
@@ -62,9 +61,11 @@
             @endphp
             <div class="wrapper animated fadeInUpShort">
                 <div>
-                    <ul class="list-group no-b">
+                    <ul class="list-group">
                         <li class="list-group-item my-1">
                             <div class="row">
+                            <div class="col-xl">
+
                                 <div class="col-md-2">
                                     <div class="text-lg-center">
                                         <div class="s-24">{{ explode('-', $jogo->diaDoJogo)[2] }}</div>
@@ -88,6 +89,8 @@
                                     <p href="#" class="badge badge-{{ $ganhou ? 'success' : 'danger' }} ">{{ $ganhou ? 'Vitória' : 'Derrota' }}</p>
                                 </div>
                             </div>
+                            </div>
+
                         </li>
                     </ul>
                 </div>
