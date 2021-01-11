@@ -64,8 +64,6 @@
                     <ul class="list-group">
                         <li class="list-group-item my-1">
                             <div class="row">
-                            <div class="col-xl">
-
                                 <div class="col-md-2">
                                     <div class="text-lg-center">
                                         <div class="s-24">{{ explode('-', $jogo->diaDoJogo)[2] }}</div>
@@ -89,8 +87,6 @@
                                     <p href="#" class="badge badge-{{ $ganhou ? 'success' : 'danger' }} ">{{ $ganhou ? 'Vitória' : 'Derrota' }}</p>
                                 </div>
                             </div>
-                            </div>
-
                         </li>
                     </ul>
                 </div>

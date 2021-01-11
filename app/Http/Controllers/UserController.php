@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
+use Intervention\Image\ImageManagerStatic as Image;
+
 class UserController extends Controller
 {
 
@@ -175,6 +177,9 @@ class UserController extends Controller
                 return redirect()->back()->with(['response' => 'Falha ao fazer upload']);
 
             }
+            $path = $request->image->getRealPath();
+
+
             try {
                 $id = Auth::user()->id;
                 $user = User::find($id);

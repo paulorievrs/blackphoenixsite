@@ -1,7 +1,17 @@
 @include('front.includes.header')
 @section('header')
 @stop
+<style>
+    .card-opacity {
+        background: rgba(1,1,1,0.6);
+        transition: background .5s ease-out;
+    }
+    .card-opacity:hover {
 
+        background: rgba(1,1,1,1);
+
+    }
+</style>
 <main id="pageContent" class="page has-sidebar">
     <div class="container-fluid relative animatedParent animateOnce">
         <div class="wrapper animated fadeInUpShort p-md-5 p-3">
@@ -14,7 +24,7 @@
             <section class="section">
                 <div class="row has-items-overlay">
                 @foreach($twitch_names as $name)
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                             <div class="card">
                                 <figure class="card-img figure">
                                     <div class="img-wrapper">
@@ -24,7 +34,7 @@
                                     <div class="img-overlay"></div>
                                     <div class="has-bottom-gradient">
                                         <div class="d-flex">
-                                            <div class="card-img-overlay">
+                                            <div class="card-img-overlay card-opacity">
                                                 <div class="pt-3 pb-3">
                                                     <a target="_new" href="https://twitch.tv/{{ $name }}">
                                                         <div class="pb-2">

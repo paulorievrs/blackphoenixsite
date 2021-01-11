@@ -1,7 +1,36 @@
 @include('front.includes.header')
 @section('header')
 @stop
+<style>
+    .my-img {
+        width: 240px;
+        max-height: 240px;
 
+    }
+
+    @media only screen and (min-width: 1034px) and (max-width: 1200px){
+
+        .my-img {
+            height: 150px;
+        }
+    }
+
+    @media only screen and (max-width : 768px) {
+
+        .my-img {
+            height: 180px;
+        }
+    }
+
+    @media only screen and (max-width : 1200px) and (min-width: 769px) {
+
+        .my-img {
+            width: 300px;
+            max-height: 230px;
+
+        }
+    }
+</style>
 <main id="pageContent" class="page has-sidebar">
     <div class="container-fluid relative animatedParent animateOnce no-p">
         <div class="animated fadeInUpShort">
@@ -35,13 +64,14 @@
                          data-auto="true"
                          data-pager="false"
                          data-controls="true"
-                         data-loop="false">
+                         data-loop="true">
                         @foreach($users as $user)
 
                         <div>
                             <figure onclick="window.open('/profile/{{ $user->twitch_username }}', '_new')">
                                 <div class="img-wrapper">
-                                    <img width="280" src="{{ $user->profileimagelink === null || strlen($user->profileimagelink) === 0 ? 'assets/img/demo/a8.jpg' : '/storage/user_img/' . $user->profileimagelink }}" alt="/">
+                                    <img class="my-img" src="{{ $user->profileimagelink === null || strlen($user->profileimagelink) === 0 ? 'assets/img/demo/a8.jpg' : '/storage/user_img/' . $user->profileimagelink }}" alt="/">
+
                                     <div class="img-overlay text-white">
                                         <div class="figcaption">
                                             <ul class="list-inline d-flex align-items-center justify-content-between">
@@ -56,13 +86,13 @@
                                                     </li>
                                             </ul>
                                             <div class="text-center mt-5">
-                                                <h5>{{ $user->name }}</h5>
+                                                <h5>{{ explode(" ", $user->name)[0] }}</h5>
                                                 <span>{{ $user->twitch_username }}</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="figure-title text-center p-2">
-                                        <h5>{{ $user->name }}</h5>
+                                        <h5>{{ explode(" ", $user->name)[0]}}</h5>
                                         <span>{{ $user->twitch_username }}</span>
                                     </div>
                                 </div>

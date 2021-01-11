@@ -9,7 +9,7 @@ class TwitchController extends Controller
 {
     public function getData()
     {
-        $twitch_names = ['joyume', 'dienicic', 'acypreste', 'juliaferrante'];
+        $twitch_names = ['joyume', 'dienicic', 'a', 'juliaferrante'];
 //            $twitch_names = ['deercheerup', 'gaules', 'liminhag0d', 'pokemaobr'];
         shuffle($twitch_names);
 
