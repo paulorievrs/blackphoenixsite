@@ -24,12 +24,12 @@
             <section class="section">
                 <div class="row has-items-overlay">
                 @foreach($twitch_names as $name)
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-3 col-md-6 pb-3">
                             <div class="card">
                                 <figure class="card-img figure">
                                     <div class="img-wrapper">
 {{--                                        <img src="assets/img/demo/v4.jpg" alt="Card image">--}}
-                                        <img src="/img/newlogo.png" alt="Card image">
+                                        <img src="/img/newlogo.png" class="p-3" alt="Card image">
                                     </div>
                                     <div class="img-overlay"></div>
                                     <div class="has-bottom-gradient">
