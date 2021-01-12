@@ -1,4 +1,4 @@
-@include('lime.edit.includes.header')
+@include('lime.includes.header')
 @section('limeheader')
 @endsection
 <div class="lime-container">
@@ -17,58 +17,45 @@
                 <div class="col-xl">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Editar um jogo</h5>
-                            <form action="/jogo/{{ $jogo->id }}" method="POST">
-                                @method('PUT')
+                            <h5 class="card-title">Criar um jogo treino</h5>
+                            <form action="/jogostreino" method="POST">
 
                                 {{ csrf_field() }}
 
                                 <div class="form-row">
                                     <div class="col-md-12 form-group pb-2">
-                                        <select class="custom-select" name="time_id">
-                                            <option select value="{{ $time->id }}">{{ $time->teamName }}</option>
-                                            @foreach($times as $time)
-                                                <option value="{{ $time->id }}">{{ $time->teamName }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row d-flex flex-row">
-                                    <div class="col-md-6 form-group pb-2">
-                                        <input type="date" class="form-control" name="diaDoJogo" value="{{ $jogo->diaDoJogo }}"/>
-                                    </div>
-                                    <div class="col-md-6 form-group pb-2">
-                                        <input type="time" name="horaDoJogo" class="form-control" value="{{ $jogo->horaDoJogo }}" />
+                                        <input type="text" name="name" class="form-control" placeholder="Nome de definição"/>
                                     </div>
                                 </div>
 
                                 <div class="form-row">
                                     <div class="col-md-12 form-group pb-2">
-                                        <input type="text" name="linkParaAssistir" class="form-control" placeholder="Link para assistir" value="{{ $jogo->linkParaAssistir }}" />
+                                        <input type="text" name="linkdademo" class="form-control" placeholder="Link da demo"/>
                                     </div>
                                 </div>
 
                                 <div class="form-row d-flex flex-row">
                                     <div class="col-md-6 form-group pb-2">
-                                        <input type="number" min="0" class="form-control" name="resultadoBlackPhoenix" placeholder="Resultado Black Phoenix" value="{{ $jogo->resultadoBlackPhoenix }}"/>
+                                        <input type="number" min="0" class="form-control" name="resultadoBlackPhoenix" placeholder="Resultado Black Phoenix"/>
                                     </div>
                                     <div class="col-md-6 form-group pb-2">
-                                        <input type="number" min="0" name="resultadoDoTime" class="form-control" placeholder="Resultado do Time" value="{{ $jogo->resultadoDoTime }}"/>
+                                        <input type="number" min="0" name="resultadoDoTime" class="form-control" placeholder="Resultado do Time"/>
                                     </div>
                                 </div>
 
                                 <div class="form-row">
                                     <div class="col-md-12 form-group pb-2">
-                                        <select class="custom-select" name="campeonato_id">
-                                            <option selected value="{{ $campeonato->id }}">{{ $campeonato->name }}</option>
-                                            @foreach($campeonatos as $campeonato)
-                                                <option value="{{ $campeonato->id }}">{{ $campeonato->name }}</option>
-                                            @endforeach
+                                        <select class="custom-select" name="plataforma">
+                                            <option selected>Qual a plataforma?</option>
+                                            <option value="Gamers Club">Gamers Club</option>
+                                            <option value="Faceit">Faceit</option>
+                                            <option value="MM">MM</option>
+                                            <option value="Outro servidor">Outro servidor</option>
                                         </select>
                                     </div>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Editar</button>
+                                <button type="submit" class="btn btn-primary">Criar</button>
                             </form>
                         </div>
                     </div>

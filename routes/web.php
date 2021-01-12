@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\JogosTreinoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -82,6 +83,14 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::post('/link', [ LinkController::class, 'store' ]);
     Route::delete('/delete-link/{id}', [ LinkController::class, 'destroy' ]);
+
+
+    Route::get('/admin-jogostreino', [ JogosTreinoController::class, 'index']);
+    Route::get('/create-jogostreino', [ JogosTreinoController::class, 'create']);
+    Route::post('/jogostreino', [ JogosTreinoController::class, 'store']);
+    Route::put('/jogostreino/{id}', [ JogosTreinoController::class, 'update']);
+    Route::get('/edit-jogostreino/{id}', [ JogosTreinoController::class, 'edit']);
+    Route::delete('/delete-jogostreino/{id}', [ JogosTreinoController::class, 'destroy']);
 
     Route::get('/admin-jogos', [ JogoController::class, 'index']);
     Route::get('/create-jogo', [ JogoController::class, 'create']);

@@ -110,6 +110,18 @@
 
                     </ul>
                 </li>
+                <li>
+                    <a href="#"><i class="material-icons">videogame_asset</i>Jogos Treino<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/create-jogostreino">Novo Jogo Treino</a>
+                        </li>
+
+                        <li>
+                            <a href="/admin-jogostreino">Todos os jogos treino</a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li>
                     <a href=""><i class="material-icons">account_box</i>Meu menu<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
