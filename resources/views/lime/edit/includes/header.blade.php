@@ -122,6 +122,26 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#"><i class="material-icons">gamepad</i>Táticas<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="/create-tatics">Nova tática</a>
+                        </li>
+
+                        <li>
+                            <a href="/admin-tatics">Todos as táticas</a>
+                        </li>
+
+                        <li>
+                            <a href="/create-taticimage">Nova imagem de tática</a>
+                        </li>
+
+                        <li>
+                            <a href="/admin-taticimage">Todos as imagens de táticas</a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li>
                     <a href=""><i class="material-icons">account_box</i>Meu menu<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>

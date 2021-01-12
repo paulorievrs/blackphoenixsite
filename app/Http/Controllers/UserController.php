@@ -177,9 +177,6 @@ class UserController extends Controller
                 return redirect()->back()->with(['response' => 'Falha ao fazer upload']);
 
             }
-            $path = $request->image->getRealPath();
-
-
             try {
                 $id = Auth::user()->id;
                 $user = User::find($id);

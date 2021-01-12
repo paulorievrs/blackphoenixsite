@@ -12,6 +12,9 @@ use App\Http\Controllers\LinkController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\JogosTreinoController;
+use App\Http\Controllers\TaticController;
+use App\Http\Controllers\TaticImageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -91,6 +94,21 @@ Route::group(['middleware' => ['auth']], function() {
     Route::put('/jogostreino/{id}', [ JogosTreinoController::class, 'update']);
     Route::get('/edit-jogostreino/{id}', [ JogosTreinoController::class, 'edit']);
     Route::delete('/delete-jogostreino/{id}', [ JogosTreinoController::class, 'destroy']);
+
+    Route::get('/admin-tatics', [ TaticController::class, 'index']);
+    Route::get('/create-tatics', [ TaticController::class, 'create']);
+    Route::post('/tatic', [ TaticController::class, 'store']);
+    Route::put('/tatic/{id}', [ TaticController::class, 'update']);
+    Route::get('/edit-tatic/{id}', [ TaticController::class, 'edit']);
+    Route::delete('/delete-tatic/{id}', [ TaticController::class, 'destroy']);
+    Route::get('/complete-tatic/{id}', [ TaticController::class, 'show']);
+
+    Route::get('/admin-taticimage', [ TaticImageController::class, 'index']);
+    Route::get('/create-taticimage', [ TaticImageController::class, 'create']);
+    Route::post('/taticimage', [ TaticImageController::class, 'store']);
+    Route::put('/taticimage/{id}', [ TaticImageController::class, 'update']);
+    Route::get('/edit-taticimage/{id}', [ TaticImageController::class, 'edit']);
+    Route::delete('/delete-taticimage/{id}', [ TaticImageController::class, 'destroy']);
 
     Route::get('/admin-jogos', [ JogoController::class, 'index']);
     Route::get('/create-jogo', [ JogoController::class, 'create']);

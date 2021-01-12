@@ -10,7 +10,7 @@ class JogosTreinoController extends Controller
 {
     public function index()
     {
-        $jogos = DB::table('jogostreino')->select('*')->paginate(7);
+        $jogos = DB::table('jogostreino')->select('*')->orderByDesc('id')->paginate(7);
         return view('lime.jogostreino', ['jogos' => $jogos]);
     }
 

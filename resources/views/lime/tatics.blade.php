@@ -20,32 +20,27 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Todos os jogos</h5>
+                            <h5 class="card-title">Todos as táticas</h5>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                     <tr>
                                         <th scope="col">Nome</th>
-                                        <th scope="col">Resultado</th>
-                                        <th scope="col">Link da demo</th>
-                                        <th scope="col">Plataforma</th>
+                                        <th scope="col">Descrição</th>
+                                        <th>Visualizar</th>
                                         <th scope="col">Editar</th>
                                         <th scope="col">Excluir</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($jogos as $jogo)
-                                        @php
-                                            $win = $jogo->resultadoBlackPhoenix > $jogo->resultadoDoTime;
-                                        @endphp
+                                    @foreach($tatics as $tatic)
                                         <tr>
-                                            <td>{{ $jogo->name }}</td>
-                                            <td><span class="badge badge-{{ $win ? 'success' : 'danger' }}">{{ $win ? 'Vitória' : 'Derrota' }}</span></td>
-                                            <td><a href="{{ $jogo->linkdademo }}" target="_new">{{ $jogo->linkdademo }}</a></td>
-                                            <td>{{ $jogo->plataforma }}</td>
-                                            <td scope="col" style="cursor: pointer"><a href="/edit-jogostreino/{{ $jogo->id }}"><i class="material-icons" style="color: orange;">create</i></a></td>
+                                            <td>{{ $tatic->name }}</td>
+                                            <td>{{ Str::limit($tatic->description, 20, $end = '...') }}</td>
+                                            <td><a href="/complete-tatic/{{$tatic->id}}">Ver</a></td>
+                                            <td scope="col" style="cursor: pointer"><a href="/edit-tatic/{{ $tatic->id }}"><i class="material-icons" style="color: orange;">create</i></a></td>
                                             <td>
-                                                <form action="/delete-jogostreino/{{ $jogo->id }}" method="POST">
+                                                <form action="/delete-tatic/{{ $tatic->id }}" method="POST">
                                                     @csrf
                                                     @method('delete')
                                                     <button style="background: none"><i class="material-icons" style="color: red;">delete</i></button>
