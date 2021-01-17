@@ -12,6 +12,11 @@
     <title>Black Phoenix Team</title>
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/app.css">
+
+    <link rel="shortcut icon" type="image/png" href="/img/favicon120.png"/>
+    <link rel="apple-touch-icon" sizes="16x16" href="/img/favicon16.png">
+    <link rel="apple-touch-icon" sizes="32x32" href="/img/favicon32.png">
+    <link rel="apple-touch-icon" sizes="64x64" href="/img/favicon64.png">
 </head>
 
 <body class="sidebar-mini sidebar-collapse theme-dark  sidebar-expanded-on-hover has-preloader" style="display: none;">

@@ -30,6 +30,11 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <link rel="shortcut icon" type="image/png" href="/img/favicon120.png"/>
+    <link rel="apple-touch-icon" sizes="16x16" href="/img/favicon16.png">
+    <link rel="apple-touch-icon" sizes="32x32" href="/img/favicon32.png">
+    <link rel="apple-touch-icon" sizes="64x64" href="/img/favicon64.png">
 </head>
 <body>
 <div class='loader'>
