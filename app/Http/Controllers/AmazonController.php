@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Amazon;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AmazonController extends Controller
 {
@@ -15,7 +16,7 @@ class AmazonController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::inRandomOrder()->get();
 
         return view('lime.amazon', [
             'users' => $users

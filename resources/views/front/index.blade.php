@@ -201,7 +201,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item ">
-                                                    <a class="no-ajaxy media-url">
+                                                    <a>
                                                         <i style="color: black !important;" class="icon-play s-48"></i>
                                                     </a>
                                                 </li>
@@ -241,7 +241,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item ">
-                                                    <a class="no-ajaxy media-url">
+                                                    <a>
                                                         <i style="color: black !important;" class="icon-play s-48"></i>
                                                     </a>
                                                 </li>
