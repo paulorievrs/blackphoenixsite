@@ -101,6 +101,16 @@
                     @endforeach
                 </div>
             </section>
+            <section class="section">
+                <h1 class="text-primary">Outros conteúdos</h1>
+            </section>
+            <div>
+                <div>
+                    <h2>Canal da nossa jogadora Coala - Universo Incrivel</h2>
+                    <span style="font-size: 12px">Não é de CS, porém, o conteúdo é muito bom!</span>
+                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/CkRHZO5M-Ms" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 </main><!--@Page Content-->
