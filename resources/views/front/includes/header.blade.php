@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Black Phoenix Site">
+    <meta name="author" content="Paulo Rievrs Oliveira">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css" />
@@ -69,6 +68,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- @Pre loader-->
 <div id="app">
@@ -146,6 +146,15 @@
                     <li>
                         <a href="https://discord.gg/5pGfzSbnQ3" target="_new" class="nav-link"><i class="fab fa-discord" style="font-size: 30px;"></i></a>
                     </li>
+
+                    <li>
+                        <a href="https://www.exitlag.com/refer/4694679" target="_new" class="nav-link"><img src="/img/exitlag-menu.png"></a>
+                    </li>
+
+                    <li>
+                        <a href="/amazon" target="_new" class="nav-link"><img src="/img/amazon-menu.png"></a>
+                    </li>
+
                     <!-- User Account-->
 
                 </ul>

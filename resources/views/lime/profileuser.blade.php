@@ -1,6 +1,17 @@
 @include('lime.edit.includes.header')
 @section('limeheader')
 @endsection
+<style>
+    .hover:hover {
+        opacity: 50%;
+        cursor: pointer;
+        color: #f57c00;
+    }
+    .hover-title:hover {
+        cursor: pointer;
+        color: #f57c00;
+    }
+</style>
 <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
 <script>
     $.ajax({
@@ -77,6 +88,23 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <h2>Amazon Store - {{ $user->name }}</h2>
+            <hr>
+            <div class="row pb-5">
+                @foreach($user->amazon as $amazon)
+                    <div class="card col-md-3 hover" onclick="window.open('{{ $amazon->ahref }}', '_blank')">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $amazon->nome }}</h5>
+                            <a href="{{ $amazon->ahref }}" target="_blank"><img border="0" src="{{ $amazon->imgsrc1 }}" ></a>
+                        </div>
+                        <p>Visualizar</p>
+
+                    </div>
+                @endforeach
+            </div>
+            <div class="d-flex align-items-center justify-content-center pb-5" style="width: 100%">
+                <a href="/" class="btn btn-primary btn-lg btn-block">Voltar</a>
             </div>
         </div>
     </div>

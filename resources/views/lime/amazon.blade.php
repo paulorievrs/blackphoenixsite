@@ -1,25 +1,49 @@
 @include('lime.includes.header')
 @section('limeheader')
 @endsection
-    <div class="lime-container {{ !auth()->check() ? 'pt-5' : ''  }}">
-    <div class="lime-body {{ !auth()->check() ? 'pt-3' : ''  }}">
-        <div class="container">
-            <h1>Nossos equipamentos</h1>
-            <img width="300" src="/img/Amazon-Logo.png" />
+<style>
+    .hover:hover {
+        opacity: 50%;
+        cursor: pointer;
+        color: #f57c00;
+    }
+    .hover-title:hover {
+        cursor: pointer;
+        color: #f57c00;
+    }
+</style>
+    <div class="lime-container">
+        <div class="lime-body pt-3">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-center" >
+                    <img width="200" class="hover" src="/img/newlogo.png" onclick="window.open('/', '_blank')">
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <h1>Nossos equipamentos</h1>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <img width="300" src="/img/Amazon-Logo.png" />
+                </div>
+
             @foreach($users as $user)
-            <h2 class="pt-5">{{ $user->name }}</h2>
+            <h2 class="hover-title" onclick="window.open('/profile/{{ $user->twitch_username }}', '_blank')">{{ ucfirst($user->twitch_username) }}</h2>
             <hr>
-            <div class="row">
+            <div class="row pb-5">
                 @foreach($user->amazon as $amazon)
-                <div class="card col-md-3">
+                <div class="card col-md-3 hover" onclick="window.open('{{ $amazon->ahref }}', '_blank')">
                     <div class="card-body">
                         <h5 class="card-title">{{ $amazon->nome }}</h5>
                         <a href="{{ $amazon->ahref }}" target="_blank"><img border="0" src="{{ $amazon->imgsrc1 }}" ></a>
                     </div>
+                    <p>Visualizar</p>
+
                 </div>
                 @endforeach
             </div>
             @endforeach
+            <div class="d-flex align-items-center justify-content-center pb-5" style="width: 100%">
+                <a href="/" class="btn btn-warning btn-lg btn-block">Voltar</a>
+            </div>
         </div>
     </div>
 </div>

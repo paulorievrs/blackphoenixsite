@@ -128,7 +128,7 @@ class UserController extends Controller
     public function profile($twitch_username)
     {
 
-        $user = DB::table('users')->select('*')->where('twitch_username','=', $twitch_username)->first();
+        $user = User::where('twitch_username', '=', $twitch_username)->firstOrFail();
         $links = DB::table('links')->select('*')->where('user_id', '=', $user->id)->get();
         //        $user = User::find($user->id);
         return view('lime.profileuser', ['user' => $user, 'links' => $links]);

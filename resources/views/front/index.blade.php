@@ -184,7 +184,7 @@
                          data-controls="true"
                          data-loop="false">
                         <div>
-                            <figure onclick="window.open('https://www.exitlag.com/refer/4694679', '_new')">
+                            <figure onclick="window.open('https://www.exitlag.com/refer/4694679', '_blank')">
                                 <div class="img-wrapper">
                                     <img src="/img/exitlagphoto.png" alt="Exit Lag Logo">
                                     <div class="img-overlay text-white">
@@ -224,7 +224,7 @@
                             </figure>
                         </div>
                         <div>
-                            <figure onclick="window.open('/amazon', '_new')">
+                            <figure onclick="window.open('/amazon', '_blank')">
                                 <div class="img-wrapper">
                                     <img src="/img/amazon.jpg" alt="Amazon Logo">
                                     <div class="img-overlay text-white">
