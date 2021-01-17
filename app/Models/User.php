@@ -56,4 +56,9 @@ class User extends Authenticatable
         return $this->hasMany(News::class, 'user_id');
     }
 
+    public function amazon()
+    {
+        return $this->hasMany(Amazon::class, 'user_id');
+    }
+
 }

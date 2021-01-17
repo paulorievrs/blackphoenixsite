@@ -14,7 +14,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\JogosTreinoController;
 use App\Http\Controllers\TaticController;
 use App\Http\Controllers\TaticImageController;
-
+use App\Http\Controllers\AmazonController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,6 +64,7 @@ Route::get('/profile/{twitch_username}', [ UserController::class, 'profile' ]);
 //    Mail::send(new \App\Mail\newContato());
 //});
 
+Route::get('/amazon', [AmazonController::class, 'index']);
 
 Route::group(['middleware' => ['auth']], function() {
 
@@ -129,6 +130,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::put('/news/{id}', [ NewsController::class, 'update']);
     Route::post('/news', [ NewsController::class, 'store']);
     Route::get('admin-news', [ NewsController::class, 'listNews' ]);
+
+    Route::get('/create-amazon', [ AmazonController::class, 'create' ]);
+    Route::post('/amazon', [ AmazonController::class, 'store' ]);
 
 });
 

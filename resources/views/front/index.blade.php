@@ -165,64 +165,106 @@
                 </section>
                 <!--@PlayLIst & Events-->
 
-{{--                <!--Recommend-->--}}
-{{--                <section class="section">--}}
-{{--                    <div class="d-flex relative align-items-center justify-content-between">--}}
-{{--                        <div class="mb-4">--}}
-{{--                            <h4>Recommended For You</h4>--}}
-{{--                            <p>Enjoy some new awesome music</p>--}}
-{{--                        </div>--}}
+                <!--Recommend-->
+                <section class="section">
+                    <div class="d-flex relative align-items-center justify-content-between">
+                        <div class="mb-4">
+                            <h4>Nossos parceiros/afiliações</h4>
+                            <p>Se puder, utilize nossos links!</p>
+                        </div>
 {{--                        <a href="albums.html">View Albums<i class="icon-angle-right ml-3"></i></a>--}}
-{{--                    </div>--}}
-{{--                    <div class="lightSlider has-items-overlay playlist"--}}
-{{--                         data-item="6"--}}
-{{--                         data-item-lg="3"--}}
-{{--                         data-item-md="3"--}}
-{{--                         data-item-sm="2"--}}
-{{--                         data-auto="false"--}}
-{{--                         data-pager="false"--}}
-{{--                         data-controls="true"--}}
-{{--                         data-loop="false">--}}
-{{--                        <div>--}}
-{{--                            <figure>--}}
-{{--                                <div class="img-wrapper">--}}
-{{--                                    <img src="assets/img/demo/a1.jpg" alt="/">--}}
-{{--                                    <div class="img-overlay text-white">--}}
-{{--                                        <div class="figcaption">--}}
-{{--                                            <ul class="list-inline d-flex align-items-center justify-content-between">--}}
-{{--                                                <li class="list-inline-item">--}}
-{{--                                                    <a href="#" class="snackbar" data-text="Added to favourites"--}}
-{{--                                                       data-pos="top-right"--}}
-{{--                                                       data-showAction="true"--}}
-{{--                                                       data-actionText="ok"--}}
-{{--                                                       data-actionTextColor="#fff"--}}
-{{--                                                       data-backgroundColor="#0c101b">--}}
+                    </div>
+                    <div class="lightSlider has-items-overlay playlist"
+                         data-item="6"
+                         data-item-lg="3"
+                         data-item-md="3"
+                         data-item-sm="2"
+                         data-auto="false"
+                         data-pager="false"
+                         data-controls="true"
+                         data-loop="false">
+                        <div>
+                            <figure onclick="window.open('https://www.exitlag.com/refer/4694679', '_new')">
+                                <div class="img-wrapper">
+                                    <img src="/img/exitlagphoto.png" alt="/">
+                                    <div class="img-overlay text-white">
+                                        <div class="figcaption">
+                                            <ul class="list-inline d-flex align-items-center justify-content-between">
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="snackbar" data-text="Added to favourites"
+                                                       data-pos="top-right"
+                                                       data-showAction="true"
+                                                       data-actionText="ok"
+                                                       data-actionTextColor="#fff"
+                                                       data-backgroundColor="#0c101b">
 {{--                                                        <i class="icon-heart-o s-18"></i>--}}
-{{--                                                    </a></li>--}}
-{{--                                                <li class="list-inline-item ">--}}
-{{--                                                    <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">--}}
-{{--                                                        <i class="icon-play s-48"></i>--}}
-{{--                                                    </a>--}}
-{{--                                                </li>--}}
-{{--                                                <li class="list-inline-item">--}}
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item ">
+                                                    <a class="no-ajaxy media-url" data-wave="assets/media/track2.json">
+                                                        <i style="color: black !important;" class="icon-play s-48"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
 {{--                                                    <a href="album-single.html"><i--}}
-{{--                                                            class="icon-more s-18 pt-3"></i></a></li>--}}
-{{--                                            </ul>--}}
-{{--                                            <div class="text-center mt-5">--}}
-{{--                                                <h5>To Phir Ao</h5>--}}
-{{--                                                <span>Joe Doe</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="figure-title text-center p-2">--}}
-{{--                                        <h5>To Phir Ao</h5>--}}
-{{--                                        <span>Joe Doe</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </figure>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </section>--}}
+{{--                                                            class="icon-more s-18 pt-3"></i></a>--}}
+                                                </li>
+                                            </ul>
+                                            <div class="text-center mt-5">
+                                                <h5 style="color: black !important;">Exit Lag</h5>
+                                                <span style="color: black !important;">Teste 3 dias grátis</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="figure-title text-center p-2">
+                                        <h5>Exit Lag</h5>
+                                        <span>Teste 3 dias grátis</span>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                        <div>
+                            <figure>
+                                <div class="img-wrapper">
+                                    <img src="/img/amazon.jpg" alt="/">
+                                    <div class="img-overlay text-white">
+                                        <div class="figcaption">
+                                            <ul class="list-inline d-flex align-items-center justify-content-between">
+                                                <li class="list-inline-item">
+                                                    <a href="#" class="snackbar" data-text="Added to favourites"
+                                                       data-pos="top-right"
+                                                       data-showAction="true"
+                                                       data-actionText="ok"
+                                                       data-actionTextColor="#fff"
+                                                       data-backgroundColor="#0c101b">
+                                                        {{--                                                        <i class="icon-heart-o s-18"></i>--}}
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item ">
+                                                    <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                        <i style="color: black !important;" class="icon-play s-48"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    {{--                                                    <a href="album-single.html"><i--}}
+                                                    {{--                                                            class="icon-more s-18 pt-3"></i></a>--}}
+                                                </li>
+                                            </ul>
+                                            <div class="text-center mt-5">
+                                                <h5 style="color: black !important;">Amazon</h5>
+                                                <span style="color: black !important;">Confira os setups da org</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="figure-title text-center p-2">
+                                        <h5>Amazon</h5>
+                                        <span>Confira os setups da org</span>
+                                    </div>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
 
 {{--            <!--@Recommend-->--}}
             </div>
