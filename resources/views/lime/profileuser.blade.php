@@ -1,3 +1,5 @@
+@php $title = 'Perfil - ' . ucfirst($user->twitch_username) @endphp
+
 @include('lime.edit.includes.header')
 @section('limeheader')
 @endsection

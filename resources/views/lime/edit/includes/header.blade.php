@@ -9,7 +9,7 @@
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Dashboard</title>
+    <title>{{ isset($title) ? $title : 'Dashboard' }}</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">

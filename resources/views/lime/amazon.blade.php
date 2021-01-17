@@ -1,6 +1,10 @@
+@php $title = 'Amazon Store - Black Phoenix' @endphp
+
 @include('lime.includes.header')
 @section('limeheader')
 @endsection
+
+
 <style>
     .hover:hover {
         opacity: 50%;
