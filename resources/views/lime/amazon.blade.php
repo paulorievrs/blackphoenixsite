@@ -37,7 +37,7 @@
                 <div class="card col-md-3 hover" onclick="window.open('{{ $amazon->ahref }}', '_blank')">
                     <div class="card-body">
                         <h5 class="card-title">{{ $amazon->nome }}</h5>
-                        <a href="{{ $amazon->ahref }}" target="_blank"><img border="0" src="{{ $amazon->imgsrc1 }}" ></a>
+                        <img border="0" src="{{ $amazon->imgsrc1 }}" />
                     </div>
                     <p>Visualizar</p>
 
