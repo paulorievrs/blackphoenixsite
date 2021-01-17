@@ -186,7 +186,7 @@
                         <div>
                             <figure onclick="window.open('https://www.exitlag.com/refer/4694679', '_new')">
                                 <div class="img-wrapper">
-                                    <img src="/img/exitlagphoto.png" alt="/">
+                                    <img src="/img/exitlagphoto.png" alt="Exit Lag Logo">
                                     <div class="img-overlay text-white">
                                         <div class="figcaption">
                                             <ul class="list-inline d-flex align-items-center justify-content-between">
@@ -201,7 +201,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item ">
-                                                    <a class="no-ajaxy media-url" data-wave="assets/media/track2.json">
+                                                    <a class="no-ajaxy media-url">
                                                         <i style="color: black !important;" class="icon-play s-48"></i>
                                                     </a>
                                                 </li>
@@ -224,9 +224,9 @@
                             </figure>
                         </div>
                         <div>
-                            <figure>
+                            <figure onclick="window.open('/amazon', '_new')">
                                 <div class="img-wrapper">
-                                    <img src="/img/amazon.jpg" alt="/">
+                                    <img src="/img/amazon.jpg" alt="Amazon Logo">
                                     <div class="img-overlay text-white">
                                         <div class="figcaption">
                                             <ul class="list-inline d-flex align-items-center justify-content-between">
@@ -241,7 +241,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="list-inline-item ">
-                                                    <a class="no-ajaxy media-url" href="assets/media/track2.mp3" data-wave="assets/media/track2.json">
+                                                    <a class="no-ajaxy media-url">
                                                         <i style="color: black !important;" class="icon-play s-48"></i>
                                                     </a>
                                                 </li>
