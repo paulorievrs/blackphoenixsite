@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -9,7 +10,17 @@ class TwitchController extends Controller
 {
     public function getData()
     {
-        $twitch_names = ['joyume', 'dienicic', 'acypreste', 'juliaferrante'];
+
+        $users = User::select('twitch_username')->get();
+        $twitch_names = [];
+
+        foreach ($users as $user) {
+            if(isset($user->twitch_username)) {
+                $twitch_names[] = $user->twitch_username;
+
+            }
+
+        }
 //            $twitch_names = ['deercheerup', 'gaules', 'liminhag0d', 'pokemaobr', 'Gabi'];
         shuffle($twitch_names);
 
